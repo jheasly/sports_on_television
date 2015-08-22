@@ -14,7 +14,9 @@ data = json.loads(response.decode(charset))
 
 for show in data:
     try:
-        print show['program']['eventTitle']
+        print show['channels'][0], show['program']['eventTitle']
     except KeyError, e:
         print 'No eventTitle here!', pprint.pprint(show)
 print '{0} programs'.format(len(data))
+
+# pprint.pprint(data)
